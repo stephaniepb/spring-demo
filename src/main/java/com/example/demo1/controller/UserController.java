@@ -4,6 +4,7 @@ package com.example.demo1.controller;
 import com.example.demo1.model.User;
 import com.example.demo1.repository.UserRepository;
 import com.example.demo1.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
@@ -25,8 +26,8 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public List<User> list() {
-        return userService.findAll();
+    public ResponseEntity<List<User>> list() {
+        return ResponseEntity.ok(userService.findAll());
     }
 
     @GetMapping("/{id}")
