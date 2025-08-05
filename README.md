@@ -31,13 +31,15 @@ This is a backend application built with **Spring Boot**, integrating both **JPA
    cd spring-demo
    ```
 4. Run the project via IDE (Intellij or VS Code)
-5. username: admin
+5. ```
+   username: admin
    password: 1234
+   ```
 6. payload sample:
-
+   ```
    {
       "name": "Stephanie",
-   	"email": "stephanie@example.com"
+      "email": "stephanie@example.com"
    }
-
+   ```
    
