@@ -10,7 +10,7 @@ This is a backend application built with **Spring Boot**, integrating both **JPA
 - **MongoDB (local)**
 - **Spring Security**
 - **ResponseEntity**
-- **Maven**
+- **Gradle**
 - **slf4j**
 
 ## 🧩 Features
