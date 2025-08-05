@@ -1,8 +1,9 @@
 package com.example.demo1.service;
 
-
+import com.example.demo1.exception.ProductNotFoundException;
 import com.example.demo1.model.Product;
 import com.example.demo1.repository.ProductRepository;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +21,12 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public void  deleteById(String id) {
-        productRepository.deleteById(id);
+    public void deleteById(String id) {
+        try {
+            productRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException ex) {
+            throw new ProductNotFoundException("Product" + id + " not found.");
+        }
     }
 
     public List<Product> findAll() {
@@ -30,7 +35,6 @@ public class ProductService {
 
     public Product findById(String id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product" + id + " not found."));
     }
-
 }
