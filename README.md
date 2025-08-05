@@ -11,6 +11,7 @@ This is a backend application built with **Spring Boot**, integrating both **JPA
 - **Spring Security**
 - **ResponseEntity**
 - **Maven**
+- **slf4j**
 
 ## 🧩 Features
 
@@ -25,6 +26,7 @@ This is a backend application built with **Spring Boot**, integrating both **JPA
 1. Make sure MongoDB is running locally on the default port (`27017`).
 2. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-project.git
-   cd your-project
+   git clone https://github.com/stephaniepb/spring-demo.git
+   cd spring-demo
    ```
+
